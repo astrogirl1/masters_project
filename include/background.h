@@ -106,7 +106,8 @@ struct background
   //double scf_A; /**< \f$ \alpha \f$ : Albrecht-Skordis offset */
 
   double Omega0_k; /**< \f$ \Omega_{0_k} \f$: curvature contribution */
-
+  double new_tau_var;
+  double frac_rm_energy;
   int N_ncdm;                            /**< Number of distinguishable ncdm species */
   double * M_ncdm;                       /**< vector of masses of non-cold relic:
                                              dimensionless ratios m_ncdm/T_ncdm */

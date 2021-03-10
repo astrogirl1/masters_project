@@ -1250,6 +1250,8 @@ int input_read_parameters(
     }
   }
   Omega_tot += pba->Omega0_ncdm_tot;
+  class_read_double("frac_rm_energy",pba->frac_rm_energy);
+  class_read_double("new_tau_var", pba->new_tau_var);
 
   /** - Omega_0_k (effective fractional density of curvature) */
   class_read_double("Omega_k",pba->Omega0_k);
@@ -3172,7 +3174,8 @@ int input_default_params(
      0.67556. Hence, we take h=0.67556, N_ur=3.046, N_ncdm=0, and all
      other parameters from the Planck2013 Cosmological Parameter
      paper. */
-
+  /*pba->frac_rm_energy*/
+  /*pba->new_tau_var*/
   pba->h = 0.67556;
   pba->H0 = pba->h * 1.e5 / _c_;
   pba->T_cmb = 2.7255;

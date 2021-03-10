@@ -8,6 +8,9 @@ tol_thermo_integration=1.e-5
 recfast_x_He0_trigger_delta = 0.01
 recfast_x_H0_trigger_delta = 0.01
 
+log10_frac_rm_energy = -0.7
+log10_new_tau_var = 1.2
+
 evolver=0
 
 k_min_tau0=0.002

@@ -2870,7 +2870,7 @@ int thermodynamics_reionization_sample(
 
   while (z > 0.) {
 
-    class_test(dz < ppr->smallest_allowed_variation,
+    class_test(dz < z*ppr->smallest_allowed_variation,
                pth->error_message,
                "stuck in the loop for reionization sampling, as if you were trying to impose a discontinuous evolution for xe(z)");
 

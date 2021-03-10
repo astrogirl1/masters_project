@@ -93,6 +93,8 @@ cdef extern from "class.h":
         double H_eq
         double z_eq
         double tau_eq
+        double frac_rm_energy
+        double new_tau_var
 
     cdef struct thermo:
         ErrorMsg error_message
