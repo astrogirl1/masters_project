@@ -817,6 +817,15 @@ class Data(object):
                 self.cosmo_arguments['h'] = math.sqrt(
                     (omega_b+omega_cdm) / (1.-Omega_Lambda))
                 del self.cosmo_arguments[elem]
+            elif elem == 'log10_frac_rm_energy':
+                self.cosmo_arguments['frac_rm_energy'] = 10.0 ** (self.cosmo_arguments[elem])
+                del self.cosmo_arguments[elem]
+            elif elem == 'log10_new_tau_var':
+                self.cosmo_arguments['new_tau_var'] = 10.0 ** (self.cosmo_arguments[elem])
+                del self.cosmo_arguments[elem]
+            elif elem == 'new_tau_var':
+                self.cosmo_arguments['new_tau_var'] = 1/(self.cosmo_arguments['Gamma_dcdm'])
+                del self.cosmo_arguments[elem]
             # infer omega_cdm from Omega_L and delete Omega_L
             elif elem == 'Omega_L':
                 omega_b = self.cosmo_arguments['omega_b']

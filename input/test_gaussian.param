@@ -1,6 +1,6 @@
 #------Experiments to test (separated with commas)-----
 
-data.experiments=['test_gaussian']
+data.experiments=['bao_boss_dr12']
 
 #------ Parameter list -------
 

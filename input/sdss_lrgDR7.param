@@ -1,8 +1,8 @@
 #------Experiments to test (separated with commas)-----
 # To see all the available ones, please look in the
 # montepython/likelihoods folder. Every folder there is a valid likelihood to
-# test.
-data.experiments=['sdss_lrgDR7']
+# test.sdss_lrgDR7
+data.experiments=['bao_boss_dr12','bbn']
 #data.experiments=['wmap','spt']
 
 #------ Parameter list -------
@@ -14,12 +14,14 @@ data.experiments=['sdss_lrgDR7']
 
 
 # Cosmological parameters list
-data.parameters['omega_b'] 	= [2.249,  -1,-1, 0.016, 0.01,'cosmo']
-data.parameters['omega_cdm'] 	= [0.1120, -1,-1, 0.0016,1,   'cosmo']
-data.parameters['n_s']       	= [0.963,  -1,-1, 0.004, 1,   'cosmo']
-data.parameters['A_s']       	= [2.42,   -1,-1, 0.038, 1e-9,'cosmo']
-data.parameters['h']         	= [0.703,  -1,-1, 0.0065,1,   'cosmo']
-data.parameters['tau_reio']    	= [0.085,  -1,-1, 0.0044,1,   'cosmo']
+#data.parameters['omega_b'] 	= [2.249,  -1,-1, 0.016, 0.01,'cosmo']
+data.parameters['Omega_cdm'] 	= [0.1120, 0,0.3, 0.0016,1,   'cosmo']
+#data.parameters['n_s']       	= [0.963,  -1,-1, 0.004, 1,   'cosmo']
+#data.parameters['A_s']       	= [2.42,   -1,-1, 0.038, 1e-9,'cosmo']
+data.parameters['h']         	= [0.703,  0.6,0.75, 0.0065,1,   'cosmo']
+#data.parameters['tau_reio']    	= [0.085,  -1,-1, 0.0044,1,   'cosmo']
+data.parameters['log10_frac_rm_energy'] = [-0.7,-4,-0.3,0.2,1,'cosmo']
+data.parameters['log10_new_tau_var'] = [1.5,-3,4,0.5,1,'cosmo']
 
 # Nuisance parameter list, same call, except the name does not have to be a class name
 # For wmap:
@@ -30,14 +32,14 @@ data.parameters['tau_reio']    	= [0.085,  -1,-1, 0.0044,1,   'cosmo']
 #data.parameters['SPT_CL']       = [5.3, -1,-1, 2.3, 1, 'nuisance']
 
 # Derived parameter list
-data.parameters['z_reio']       = [0,       -1, -1, 0,1,  'derived']
-data.parameters['Omega_Lambda'] = [0,       -1, -1, 0,1,  'derived']
+#data.parameters['z_reio']       = [0,       -1, -1, 0,1,  'derived']
+#data.parameters['Omega_Lambda'] = [0,       -1, -1, 0,1,  'derived']
 
 
 # These two are required to compute P(k) and to get sigma8 as a derived parameter
 # (class must compute the P(k) until sufficient k)
-data.cosmo_arguments['output'] = 'mPk'
-data.cosmo_arguments['P_k_max_h/Mpc'] = 1.
+#data.cosmo_arguments['output'] = 'mPk'
+#data.cosmo_arguments['P_k_max_h/Mpc'] = 1.
 
 #------ Mcmc parameters ----
 # Number of steps taken, by default (overwritten by the -N command)
