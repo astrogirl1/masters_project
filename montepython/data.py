@@ -822,9 +822,7 @@ class Data(object):
                 del self.cosmo_arguments[elem]
             elif elem == 'log10_new_tau_var':
                 self.cosmo_arguments['new_tau_var'] = 10.0 ** (self.cosmo_arguments[elem])
-                del self.cosmo_arguments[elem]
-            elif elem == 'new_tau_var':
-                self.cosmo_arguments['new_tau_var'] = 1/(self.cosmo_arguments['Gamma_dcdm'])
+                #self.cosmo_arguments['Gamma_dcdm'] = 1/(self.cosmo_arguments['new_tau_var'])
                 del self.cosmo_arguments[elem]
             # infer omega_cdm from Omega_L and delete Omega_L
             elif elem == 'Omega_L':

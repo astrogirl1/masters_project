@@ -31,7 +31,7 @@
 # #BSUB -x
 
 ### Each MPI process with T Threads
-export OMP_NUM_THREADS=12
+export OMP_NUM_THREADS=8
 
 ### Choose an MPI: either Open MPI or Intel MPI
 ### Use esub for Open MPI

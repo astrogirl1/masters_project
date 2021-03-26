@@ -1,6 +1,9 @@
 #### Example of what you can do with the --extra files:
 # Modify as desired by uncommenting relevant lines starting with "info."
 
+#/home/a1705053/code/planck/code/plc_3.0/plc-3.01/../plc_2.0/hi_l/plik/pli
+       k_dx11dr2_HM_v18_TT.clik
+
 #### Options related to the parameters.
 # Use this to derive a new parameter.
 # The new parameter can be defined as a function of one or more existing
@@ -35,7 +38,7 @@
 
 # Use this to plot just a selection of parameters (if you have
 # changed the names with 'info.to_change', you must put the new names here!)
-#info.to_plot = ['omega_b', 'Omega_m', 'H0', 'Omega_Lambda', 'r^s_d']
+info.to_plot = ['h', 'Omega_cdm', 'log10_new_tau_var', 'log10_frac_rm_energy']
 
 # Use this to control the boundaries of 1d and 2d plots.
 # Note if your log.param contains parameter boundaries the 1d plot will not
@@ -96,24 +99,24 @@
 # Number of bins in the histogram, lower for smoother contours,
 # but extra modes or local maxima may get washed out. Sometimes
 # useful if the code struggles to compute confidence intervals.
-#info.bins = 20
+#info.bins = 35
 
 # Width of gaussian smoothing for plotting posteriors in units
 # of bin size, increase for smoother appearance.
 # If non-Gaussian posteriors recommend setting to 0.35
-#info.gaussian_smoothing = 0.5
+info.gaussian_smoothing = 0.35
 
 # Interpolation factor for plotting posteriors, 1 means no interpolation,
 # increase for smoother contours (integer).
 # If non-Gaussian posteriors recommend setting to 2
-#info.interpolation_smoothing = 4
+#info.interpolation_smoothing = 2
 
 # Smoothing scheme for 1d posteriors, 0 means no smoothing, 1 means cubic
 # interpolation, higher means fitting ln(L) with polynomial of order n (integer).
 # IF NON-GAUSSIAN POSTERIORS TURN THIS OFF (set to 0)
 # There are recommended lines to flip in montepython/analyze.py to make
 # plots nicer in this case. Search for posterior_smoothing
-#info.posterior_smoothing = 5
+#info.posterior_smoothing = 0
 
 
 #### Add extra features to the plot via python scripts.
