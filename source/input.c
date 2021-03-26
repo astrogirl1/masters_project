@@ -3174,8 +3174,9 @@ int input_default_params(
      0.67556. Hence, we take h=0.67556, N_ur=3.046, N_ncdm=0, and all
      other parameters from the Planck2013 Cosmological Parameter
      paper. */
-  /*pba->frac_rm_energy*/
-  /*pba->new_tau_var*/
+  pba->has_dcdm = 1;
+  pba->frac_rm_energy = 0.0001;
+  pba->new_tau_var = 0.001;
   pba->h = 0.67556;
   pba->H0 = pba->h * 1.e5 / _c_;
   pba->T_cmb = 2.7255;

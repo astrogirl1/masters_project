@@ -1,8 +1,6 @@
 # List of input/precision parameters passed
 # but not used (just for info)
 #
-log10_frac_rm_energy = -0.7
-log10_new_tau_var = 1.2
 Gamma_dcdm = 0.0
 ncdm_psd_filenames = psd_FD_single.dat
 ncdm_psd_parameters = 0.3 ,0.5, 0.05
@@ -78,5 +76,3 @@ selection = gaussian
 selection_mean = 0.98,0.99,1.0,1.1,1.2
 selection_width = 0.1
 non_diagonal = 4
-log10_frac_rm_energy = -0.7
-log10_new_tau_var = 1.2

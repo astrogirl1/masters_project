@@ -318,6 +318,8 @@ int background_functions(
     rho_tot += pvecback[pba->index_bg_rho_cdm];
     p_tot += 0.;
     rho_m += pvecback[pba->index_bg_rho_cdm];
+    pba->Gamma_dcdm = 1 / pba->new_tau_var;
+
   }
 
   /* dcdm */
@@ -2424,11 +2426,11 @@ int background_derivs(
 
   dy[pba->index_bi_D] = y[pba->index_bi_D_prime];
   dy[pba->index_bi_D_prime] = -a*H*y[pba->index_bi_D_prime] + 1.5*a*a*rho_M*y[pba->index_bi_D];
-  /*print("'new_tau_var' input parameter = %g\n", pba->new_tau_var)*/
   if (pba->has_dcdm == _TRUE_){
+    printf("'new_tau_var' input parameter = %g\n", pba->new_tau_var);
     /** - compute dcdm density \f$ \rho' = -3aH \rho - a \Gamma \rho \f$*/
     dy[pba->index_bi_rho_dcdm] = -3.*y[pba->index_bi_a]*pvecback[pba->index_bg_H]*y[pba->index_bi_rho_dcdm]-
-      y[pba->index_bi_a]*pba->frac_rm_energy*pba->Gamma_dcdm*y[pba->index_bi_rho_dcdm];
+      y[pba->index_bi_a]*pba->frac_rm_energy*1./[pba->new_tau_var]*y[pba->index_bi_rho_dcdm];
   }
 
   if ((pba->has_dcdm == _TRUE_) && (pba->has_dr == _TRUE_)){
